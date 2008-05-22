@@ -1,0 +1,19 @@
+h1. cds_demo
+
+A rails application to demonstrate calendar-date-select
+
+h2. Installation:
+
+<pre>
+# Clone the application 
+git clone git://github.com/timcharper/cds_demo.git
+cd cds_demo
+git submodule init && git submodule update  
+script/server
+</pre>
+
+h2. Author
+
+Tim Harper
+
+http://tim.theenchanter.com/
