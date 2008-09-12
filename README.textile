@@ -6,8 +6,8 @@ h2. Installation:
 
 <pre>
 # Clone the application 
-git clone git://github.com/timcharper/cds_demo.git
-cd cds_demo
+git clone git://github.com/timcharper/calendar_date_select_demo.git 
+cd calendar_date_select_demo
 git submodule init && git submodule update  
 script/server
 </pre>
