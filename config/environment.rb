@@ -58,6 +58,8 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
 end
 
+ActionView::Base.field_error_proc = Proc.new{ |html_tag, instance| %{<span class="fieldWithErrors">#{html_tag}</span>} }
+
 unless ActionController::Base.perform_caching
   ActionController::Dispatcher.class_eval do
     before_dispatch :cleanup_asset_path_cache

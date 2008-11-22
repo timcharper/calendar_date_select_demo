@@ -34,3 +34,15 @@
 Created On: &lt;%= f.calendar_date_select :created_on, :embedded => true %&gt;
 &lt;% end %&gt;
 </pre>
+
+<h2>.fieldWithErrors div fix</h2>
+
+<p>Rails 2.1 by default wraps all input elements in a div.fieldWithErrors class, causing the calendar image to display on a new line.</p>
+
+If this is happening to you, add this to environment.rb to tell rails to use a span.fieldWithErrors tag instead:
+
+<pre>
+  ActionView::Base.field_error_proc = Proc.new{ |html_tag, instance| 
+    %{&lt;span class="fieldWithErrors"&gt;#{html_tag}&lt;/span&gt;} 
+  }
+</pre>
