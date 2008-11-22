@@ -1,0 +1,64 @@
+<h1>Other features</h1>
+
+<h2>Remove buttons:</h2>
+<%= calendar_date_select_tag "milestone", nil, :embedded => false, :buttons => false %>
+
+<pre>
+&lt;%= calendar_date_select_tag "no_buttons", nil, :embedded =&gt; true, :buttons =&gt; false %&gt;
+</pre>
+
+<h2>Look ma!  Dropdowns stay behind!</h2>
+<p>
+  Calendar Date Select shows on top of drop downs in IE 6... thanks to an infamous iframe hack.
+</p>
+<%= calendar_date_select_tag "ie_dropdown" %>
+<p>
+  <select><option>Stay behind, drop down</option></select>
+</p>
+
+<h2>Disabled form elements can't be updated</h2>
+<%= calendar_date_select_tag "disabled_field", "January 20, 2007", :disabled => true %> <br />
+<%= calendar_date_select_tag "readonly_field", "January 20, 2007", :readonly => true %>
+
+<pre>
+&lt;%= calendar_date_select_tag "disabled_field", "January 20, 2007", :disabled => true %&gt;
+&lt;%= calendar_date_select_tag "readonly_field", "January 20, 2007", :readonly => true %&gt;
+</pre>
+
+<h2>Month/year selector as a label</h2>
+<%= calendar_date_select_tag "month_year_selector_label", "", :month_year => "label" %> <br />
+<pre>
+&lt%= calendar_date_select_tag "month_year_selector_label", "", :month_year => "label" %&gt;
+</pre>
+
+
+<h2>Force using the popup</h2>
+<p>Disables the input box so the user is coerced to use the popup control to input the date.</p>
+<%= calendar_date_select_tag "month_year_selector_label", "", :popup => :force %> <br />
+<pre>
+&lt%= calendar_date_select_tag "month_year_selector_label", "", :popup => :force %&gt;
+</pre>
+
+
+<h2>Use a popup window with a hidden field</h2>
+<p></p>
+<%= calendar_date_select_tag "pop_up_hidden", "", :hidden => true %> <br />
+<pre>
+&lt%= calendar_date_select_tag "pop_up_hidden", "", :hidden => true  %&gt;
+</pre>
+
+<h2>Limit the date selection to be in the past</h2>
+<p></p>
+<%= calendar_date_select_tag "birth_day", "", :valid_date_check => "date < (new Date()).stripTime()" %> <br />
+<pre>
+&lt%= calendar_date_select_tag "birth_day", "", :valid_date_check => "date &lt; (new Date()).stripTime()" %&gt;
+</pre>
+
+
+<h2>Scrollable div positioning</h2>
+<p></p>
+<div style="height: 300px; width: 200px; overflow-y: auto">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <%= calendar_date_select_tag "scrollable_div", "", :valid_date_check => "date < (new Date()).stripTime()" %> <br />
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>

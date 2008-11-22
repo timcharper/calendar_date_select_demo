@@ -1,0 +1,36 @@
+<h1>Form builder integration</h1>
+<p>Additionally, calendar_date_select can be used in a form builder, or bound to an instance variable.
+  It's intelligent and will check the models data type to determine whether or not to use a time field (though you can still override this behavior, if you wish, by setting :time => false).
+</p>
+<%
+@listing = Listing.new
+@listing.errors.add :last_follow_up_at, "They're all gonna laugh at you!"
+@listing.errors.add :created_on, "They're all gonna laugh at you!"
+@listing.last_follow_up_at = "Apr 27, 2007 5:00 pm"
+%>
+<p>
+  Last followed up at :<%= calendar_date_select :listing, :last_follow_up_at %>
+</p>
+
+
+<pre>
+&lt;%
+@listing = Listing.new
+@listing.errors.add :last_follow_up_at, "They're all gonna laugh at you!"
+@listing.last_follow_up_at = "Apr 27, 2007 5:00 pm"
+%&gt;
+&lt;%= calendar_date_select :listing, :last_follow_up_at %&gt;
+</pre>
+
+<h4>or</h4>
+ 
+<% fields_for :listing do |f| %>
+  Created On: <%= f.calendar_date_select :created_on, :embedded => true %>
+<% end %>
+
+
+<pre>
+&lt;% fields_for :listing do |f| %&gt;
+Created On: &lt;%= f.calendar_date_select :created_on, :embedded => true %&gt;
+&lt;% end %&gt;
+</pre>

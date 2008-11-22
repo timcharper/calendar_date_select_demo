@@ -1,0 +1,22 @@
+<h1>Popup Calendars</h1>
+
+<h2>No Time</h2>
+<p>
+  <%= calendar_date_select_tag "p_date" %>
+</p>
+
+
+<pre>
+&lt;%= calendar_date_select_tag "e_date" %&gt;
+</pre>
+
+<hr />
+<h2>With time</h2>
+<p>
+  <%= calendar_date_select_tag "p_date_and_time", nil, :time => true %>
+</p>
+
+
+<pre>
+&lt;= calendar_date_select_tag "p_date_and_time", "January 2, 2007 5:45 pm", :time => true  %&gt;
+</pre>

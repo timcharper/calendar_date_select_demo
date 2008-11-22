@@ -1,0 +1,23 @@
+<h1>Embedded Calendars</h1>
+<h2>No Time</h2>
+
+<%= calendar_date_select_tag "e_date", nil, :embedded => true, :year_range => 10.years.ago..0.years.ago %>
+<pre>
+&lt;%= calendar_date_select_tag "e_date", nil, :embedded => true, :year_range => 10.years.ago..0.years.ago %&gt;
+</pre>
+<hr />
+<h2>With time</h2>
+<p>
+  <%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true %>
+</p>
+<pre>
+&lt;%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true %&gt;
+</pre>
+<hr />
+<h2>Mixed</h2>
+<p>
+  <%= calendar_date_select_tag "e_date_and_time_mixed", nil, :embedded => true, :time => :mixed %>
+</p>
+<pre>
+&lt;%= calendar_date_select_tag "e_date_and_time_mixed", nil, :embedded => true, :time => :mixed %&gt;
+</pre>
