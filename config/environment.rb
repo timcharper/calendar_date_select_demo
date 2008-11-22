@@ -57,3 +57,13 @@ Rails::Initializer.run do |config|
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
 end
+
+unless ActionController::Base.perform_caching
+  ActionController::Dispatcher.class_eval do
+    before_dispatch :cleanup_asset_path_cache
+  
+    def cleanup_asset_path_cache
+      ActionView::Base.computed_public_paths.clear
+    end
+  end
+end
