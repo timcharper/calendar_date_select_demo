@@ -2005,6 +2005,7 @@ Element.Methods = {
     var valueT = 0, valueL = 0;
     do {
       valueT += element.offsetTop  || 0;
+      valueT -= element.scrollTop  || 0;
       valueL += element.offsetLeft || 0;
       element = element.offsetParent;
     } while (element);
