@@ -92,17 +92,17 @@ END_OF_STRING
     selected_tab||= @tabset_tabs.first[:id]
     js_output << "$('#{uniq_id}').tabset.gotab('#{selected_tab}');"
 
-    concat("<div id='#{uniq_id}'>", block.binding)
-    concat(tabs_html, block.binding)
-    concat("<div>", block.binding)
-    concat(tabs_content, block.binding)
-    concat("</div>", block.binding)
+    concat("<div id='#{uniq_id}'>")
+    concat(tabs_html)
+    concat("<div>")
+    concat(tabs_content)
+    concat("</div>")
     # Create a place for the tabs to be stored, temporarily
-    concat("<div id='tab_element_storage' style='position:absolute; display:none;'></div>", block.binding)
+    concat("<div id='tab_element_storage' style='position:absolute; display:none;'></div>")
     
     # Output all of the necessary javascript
-    concat("<script language='javascript'>#{js_output}</script>", block.binding)
-    concat("</div>", block.binding)
+    concat("<script language='javascript'>#{js_output}</script>")
+    concat("</div>")
   end
   
   def define_tab(id, label, &block)
@@ -111,9 +111,9 @@ END_OF_STRING
       :label => label
     }
     
-    concat("<div id='#{id}_tab' style='display:none'>", block.binding)
-    concat(capture(&block), block.binding)
-    concat("</div>", block.binding)
+    concat("<div id='#{id}_tab' style='display:none'>")
+    concat(capture(&block))
+    concat("</div>")
   end
 
 end
