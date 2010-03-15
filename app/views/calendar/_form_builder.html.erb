@@ -15,9 +15,10 @@
 
 <pre>
 &lt;%
-@listing = Listing.new
-@listing.errors.add :last_follow_up_at, "They're all gonna laugh at you!"
-@listing.last_follow_up_at = "Apr 27, 2007 5:00 pm"
+  @listing = Listing.new
+  @listing.errors.add :last_follow_up_at, "They're all gonna laugh at you!"
+  @listing.last_follow_up_at = "Apr 27, 2007 5:00 pm"
+  @listing.errors.add :created_on, "They're all gonna laugh at you!"
 %&gt;
 &lt;%= calendar_date_select :listing, :last_follow_up_at %&gt;
 </pre>
@@ -31,8 +32,37 @@
 
 <pre>
 &lt;% fields_for :listing do |f| %&gt;
-Created On: &lt;%= f.calendar_date_select :created_on, :embedded => true %&gt;
+  Created On: &lt;%= f.calendar_date_select :created_on, :embedded => true %&gt;
 &lt;% end %&gt;
+</pre>
+
+<h2>Default Time</h2>
+
+<p>
+  calendar_date_select lets you define default time using JavaScript Date object or Ruby Time object. You can still override the time field
+  by setting :time => false
+</p>
+
+
+<% @listing = Listing.new %>
+<p>
+  Created On: <%= calendar_date_select :listing, :created_on, :default_time => "new Date('Feb 18, 2007 5:45 pm')" %>
+</p>
+
+<pre>
+&lt;% @listing = Listing.new %&gt;
+&lt;%= calendar_date_select :listing, :created_on, :default_time => "new Date('Feb 18, 2007 5:45 pm')" %&gt;
+</pre>
+
+<h4>or</h4>
+
+<p>
+  Created On: <%= calendar_date_select :listing, :created_on, :default_time => Time.parse("January 2, 2007 5:00 PM") %>
+</p>
+
+<pre>
+&lt;% @listing = Listing.new %&gt;
+&lt;%= calendar_date_select :listing, :created_on, :default_time => Time.parse("January 2, 2007 5:00 PM") %&gt;
 </pre>
 
 <h2>.fieldWithErrors div fix</h2>

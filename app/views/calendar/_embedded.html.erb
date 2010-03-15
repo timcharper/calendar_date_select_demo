@@ -14,6 +14,26 @@
 &lt;%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true %&gt;
 </pre>
 <hr />
+<h2>With default time</h2>
+<p>
+  calendar_date_select_tag lets you define default time using JavaScript Date object or Ruby Time object.
+</p>
+<p>
+  <%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true, :default_time => "new Date('Feb 18, 2007 5:45 pm')" %>
+</p>
+<pre>
+&lt;%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true,
+                        :default_time => "new Date('Feb 18, 2007 5:45 pm')" %&gt;
+</pre>
+<h4>or</h4>
+<p>
+  <%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :default_time => Time.parse("January 2, 2007 5:00 PM") %>
+</p>
+<pre>
+&lt;%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true,
+                        :default_time => Time.parse("January 2, 2007 5:00 PM") %&gt;
+</pre>
+<hr />
 <h2>Mixed</h2>
 <p>
   <%= calendar_date_select_tag "e_date_and_time_mixed", nil, :embedded => true, :time => :mixed %>
