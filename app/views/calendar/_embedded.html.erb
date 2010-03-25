@@ -27,11 +27,11 @@
 </pre>
 <h4>or</h4>
 <p>
-  <%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :default_time => Time.parse("January 2, 2007 5:00 PM") %>
+  <%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :default_time => Date.parse("January 2, 2007") %>
 </p>
 <pre>
 &lt;%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true,
-                        :default_time => Time.parse("January 2, 2007 5:00 PM") %&gt;
+                        :default_time => Date.parse("January 2, 2007") %&gt;
 </pre>
 <hr />
 <h2>Mixed</h2>
