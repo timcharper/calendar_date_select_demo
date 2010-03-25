@@ -1,43 +1,26 @@
 <h1>Embedded Calendars</h1>
 <h2>No Time</h2>
 
-<%= calendar_date_select_tag "e_date", nil, :embedded => true, :year_range => 10.years.ago..0.years.ago %>
-<pre>
-&lt;%= calendar_date_select_tag "e_date", nil, :embedded => true, :year_range => 10.years.ago..0.years.ago %&gt;
-</pre>
+<%= eval_and_show_code %(calendar_date_select_tag "e_date", nil, :embedded => true, :year_range => 10.years.ago..0.years.ago) %>
 <hr />
 <h2>With time</h2>
-<p>
-  <%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true %>
-</p>
-<pre>
-&lt;%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true %&gt;
-</pre>
+
+<%= eval_and_show_code %(calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true) %>
+
 <hr />
 <h2>With default time</h2>
 <p>
   calendar_date_select_tag lets you define default time using JavaScript Date object or Ruby Time object.
 </p>
-<p>
-  <%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true, :default_time => "new Date('Feb 18, 2007 5:45 pm')" %>
-</p>
-<pre>
-&lt;%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true,
-                        :default_time => "new Date('Feb 18, 2007 5:45 pm')" %&gt;
-</pre>
+
+<%= eval_and_show_code %(
+calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :time => true,
+                         :default_time => "new Date('Feb 18, 2007 5:45 pm')") %>
 <h4>or</h4>
-<p>
-  <%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true, :default_time => Date.parse("January 2, 2007") %>
-</p>
-<pre>
-&lt;%= calendar_date_select_tag "e_date_and_time", nil, :embedded => true,
-                        :default_time => Date.parse("January 2, 2007") %&gt;
-</pre>
+
+<%= eval_and_show_code %(
+calendar_date_select_tag "e_date_and_time", nil, :embedded => true,
+                         :default_time => Date.parse("January 2, 2007")) %>
 <hr />
 <h2>Mixed</h2>
-<p>
-  <%= calendar_date_select_tag "e_date_and_time_mixed", nil, :embedded => true, :time => :mixed %>
-</p>
-<pre>
-&lt;%= calendar_date_select_tag "e_date_and_time_mixed", nil, :embedded => true, :time => :mixed %&gt;
-</pre>
+<%= eval_and_show_code %(calendar_date_select_tag "e_date_and_time_mixed", nil, :embedded => true, :time => :mixed) %>
